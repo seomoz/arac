@@ -1,6 +1,8 @@
 #! /usr/bin/env python2.6
 # -*- coding: utf-8 -*-
 
+from setuptools import find_packages
+from distutils.core import setup
 
 __author__ = 'Justin S Bayer, bayer.justin@googlemail.com'
 
@@ -18,6 +20,6 @@ setup(
     packages=find_packages('./src/python'),
     include_package_data=True,
     package_dir={'arac': './src/python/arac'},
-    data_files=[('arac', ('libarac.dylib',))],
+    data_files=[('arac', ('./src/python/arac/_cppbridge.so',))],
     test_suite='arac.tests.runtests.make_test_suite',
 )
